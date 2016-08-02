@@ -14,7 +14,7 @@
 			<p>UV:<span>4565</span></p>
 		</div>
 		<div id="search">
-			<input type="text" value="输入搜索的关键词" />
+			<input type="text" placeholder="输入搜索的关键词" />
 			<select>
 				<option value="金额">金额</option>
 				<option value="奖品">奖品</option>
@@ -22,8 +22,36 @@
 			<input type="button" value="搜索" />
 		</div>
 		<div id="buts">
-			<p class="p1"><span>步数</span><span class="last">时间</span></p>
+			<p class="p1"><span ng-click="Orderby('step')">步数</span><span class="last" ng-click="Orderby('updateTime')">时间</span></p>
 			<p class="p2">导出</p>
 		</div>
 	</header>
+	<section id="active_table">
+		<table>
+			<thead>
+				<tr>
+					<th>用户</th>
+					<th>截图</th>
+					<th>步数</th>
+					<th>修正步数</th>
+					<th>捐赠金额</th>
+					<th>奖品</th>
+					<th>上传时间</th>
+					<th>联系方式</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="data in active|orderBy:oby:true">
+					<td  ng-init="Disabled_$index=true" ng-model='Disabled_$index' ng-bind='data.name'></td>
+					<td><img src="{{data.img}}"></td>
+					<td><input type="number" ng-value="data.step" ng-disabled="Disabled_$index" ></td>
+					<td><input type="button" ng-value="Disabled_$index?'修改':'确认'" ng-class="{color:!Disabled_$index}" ng-click='Disabled_$index=!Disabled_$index'></td>
+					<td ng-bind='data.donation'></td>
+					<td ng-bind='data.award'></td>
+					<td ng-bind='data.updateTime'></td>
+					<td ng-bind-html='data.contact'></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
 </div>

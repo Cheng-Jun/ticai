@@ -1,6 +1,7 @@
 *{padding: 0px;margin: 0px;}
 html,body{
     width: 100%;
+    min-width: 1400px;
 }
 a{text-decoration: none;}
 a img{border:none}
@@ -42,7 +43,6 @@ header{
             border-right:1px solid #000;
             &:hover{
                 color:#B8860B;
-                border-right:none;
             }
             &.last{
                 border-bottom: none;
@@ -66,9 +66,10 @@ header{
    header{
        height: 50px;
        .calendar{
-           width: 200px;
-           height: 50px;
+           width: 230px;
+           height: 40px;
            margin:0px 20px;
+           padding-top: 10px;
            float: left;
        }
        #pv_uv{
@@ -98,6 +99,7 @@ header{
                margin-right: 10px;
            }
            input[type=button]{
+               cursor: pointer;
                width: 50px;
                height: 50px;
                 color: #000;
@@ -124,6 +126,7 @@ header{
            line-height: 40px;
            overflow: hidden;
            .p1{
+               cursor: pointer;
                overflow: hidden;
                width: 160px;
                border:1px solid darkkhaki;
@@ -143,6 +146,7 @@ header{
                }
            }
            .p2{
+               cursor: pointer;
                float: right;
                width: 60px;
                height: 40px;
@@ -152,4 +156,77 @@ header{
            }
        }
    } 
+}
+
+
+#active_table{
+    width: 100%;
+    table{
+        width: 100%;
+        text-align: center;
+        thead tr{
+            height: 40px;
+            th{
+                text-align: center;
+                padding: 0px 10px;
+                font-size: 16px;
+                font-weight: bold;
+            }
+        }
+        tbody tr{
+            height: 100px;
+        }
+        td{
+            width: 150px;
+            img{
+                width: 50px;
+            }
+            input[type=number]:disabled{
+                text-align: center;
+                width: 100px;
+                height: 30px;
+                border:none;
+                background-color: #fff;
+            }
+            input[type=number]{
+                text-align: center;
+                width: 100px;
+                height: 30px;
+                border:1px solid #CCCCCC;
+                border-radius: 4px;
+            }
+            input[type=button]{
+                background-color: #fff;
+                border:1px solid #000;
+                border-radius: 4px;
+                width: 70px;
+                height: 30px;
+                cursor: pointer;
+                &.color{
+                    background-color: red;
+                    color:#fff;
+                    border:none;
+                }
+            }
+        }
+    }
+}
+
+.user{
+    td{
+        width: 240px !important;
+        a{
+            display:inline-block;
+            background-color: #fff;
+            border:1px solid #000;
+            border-radius: 4px;
+            width: 70px;
+            height: 30px;
+            line-height: 30px;
+            color:#000000;
+        }
+    }
+}
+.offline{
+    td{width: 400px !important;}
 }

@@ -5,6 +5,7 @@
 
 html, body {
   width: 100%;
+  min-width: 1400px;
 }
 
 a {
@@ -63,7 +64,6 @@ header {
 
 #left ul li a:hover {
   color: #B8860B;
-  border-right: none;
 }
 
 #left ul li a.last {
@@ -90,9 +90,10 @@ header {
 }
 
 #active header .calendar {
-  width: 200px;
-  height: 50px;
+  width: 230px;
+  height: 40px;
   margin: 0px 20px;
+  padding-top: 10px;
   float: left;
 }
 
@@ -128,6 +129,7 @@ header {
 }
 
 #active header #search input[type=button] {
+  cursor: pointer;
   width: 50px;
   height: 50px;
   color: #000;
@@ -156,6 +158,7 @@ header {
 }
 
 #active header #buts .p1 {
+  cursor: pointer;
   overflow: hidden;
   width: 160px;
   border: 1px solid darkkhaki;
@@ -178,10 +181,93 @@ header {
 }
 
 #active header #buts .p2 {
+  cursor: pointer;
   float: right;
   width: 60px;
   height: 40px;
   border: 1px solid darkkhaki;
   border-radius: 4px;
   margin-right: 20px;
+}
+
+#active_table {
+  width: 100%;
+}
+
+#active_table table {
+  width: 100%;
+  text-align: center;
+}
+
+#active_table table thead tr {
+  height: 40px;
+}
+
+#active_table table thead tr th {
+  text-align: center;
+  padding: 0px 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#active_table table tbody tr {
+  height: 100px;
+}
+
+#active_table table td {
+  width: 150px;
+}
+
+#active_table table td img {
+  width: 50px;
+}
+
+#active_table table td input[type=number]:disabled {
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  border: none;
+  background-color: #fff;
+}
+
+#active_table table td input[type=number] {
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+}
+
+#active_table table td input[type=button] {
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 4px;
+  width: 70px;
+  height: 30px;
+  cursor: pointer;
+}
+
+#active_table table td input[type=button].color {
+  background-color: red;
+  color: #fff;
+  border: none;
+}
+
+.user td {
+  width: 240px !important;
+}
+
+.user td a {
+  display: inline-block;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 4px;
+  width: 70px;
+  height: 30px;
+  line-height: 30px;
+  color: #000000;
+}
+
+.offline td {
+  width: 400px !important;
 }

@@ -34,7 +34,7 @@ ticai.controller('listTitle',['$scope','$location',function($scope,$location){
 
 //右侧路由控制
 
-var table=angular.module('myTable',['ngRoute']);
+var table=angular.module('myTable',['ngRoute','ngSanitize']);
 table.config(function($routeProvider){
 	$routeProvider.when('/',{
 		templateUrl:'view/active.html',
@@ -75,7 +75,40 @@ table.controller('Active',['$scope',function($scope){
 			//$("#dCon_demo3").html('开始时间 : ' + obj.startDate + '<br/>结束时间 : ' + obj.endDate);
 		}
 	});
+	// 日历插件结束
 	
+	$scope.active=[
+		{
+			name:'111',
+			img:'images/1.png',
+			step:'2400',
+			donation:'2.5元',
+			award:'一等奖',
+			updateTime:'2016/9/1',
+			contact:'程俊<br/>15256033883'
+		},
+		{
+			name:'1.5',
+			img:'images/1.png',
+			step:'2500',
+			donation:'4.5元',
+			award:'3等奖',
+			updateTime:'2016/7/1',
+			contact:'程俊<br/>15256033883'
+		},
+		{
+			name:'444',
+			img:'images/1.png',
+			step:'2100',
+			donation:'1.5元',
+			award:'2等奖',
+			updateTime:'2016/8/1',
+			contact:'程俊<br/>15256033883'
+		},
+	];
+	$scope.Orderby=function(obj){
+		$scope.oby=obj;
+	}
 	
 }])
 
